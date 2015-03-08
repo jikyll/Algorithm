@@ -1,5 +1,9 @@
 package recall;
-
+/**
+ * 实现全排列（交换元素法）
+ * @author haodong
+ *
+ */
 public class AllSort {
 	private static int index = 1;
 	public static void main(String[] args) {
@@ -12,9 +16,15 @@ public class AllSort {
 			return;
 		}
 		for (int i = start; i <= end; i++) {
+			/**
+			 * 这里是全排列的关键，交换元素，注意i是从start开始遍历，因为数组保持原状时也是一种情况
+			 */
 			char tmp = a[start];
 			a[start] = a[i];
 			a[i] = tmp;
+			/**
+			 * start参数控制数组遍历到的位数
+			 */
 			allSort(a, start+1, end);
 			tmp = a[start];
 			a[start] = a[i];
